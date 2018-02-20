@@ -1,20 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React from "react";
+import { Link } from "react-router";
 
 const Movie = props => {
-    let pagelink = "/movie/" + props.movie.id
+  let pagelink = "/movie/" + props.movie.id;
 
-    return (
-        <li className="movie-item">
-            <Link to={pagelink}>
-                <img className="posterimg" src={"https://image.tmdb.org/t/p/w185" + props.movie.poster_path} alt="no"/>
+  return (
+    <li className="movie-item">
+      <Link to={pagelink}>
+        <img
+          className="posterimg"
+          src={"https://image.tmdb.org/t/p/w185" + props.movie.poster_path}
+          alt="no"
+        />
 
-                <div className="movietitle">
-                    <h6>{props.movie.title}</h6>
-                </div>
-            </Link>
-        </li>
-    )
-}
+        <div className="movietitle">
+          <h6>{props.movie.title}</h6>
+        </div>
+      </Link>
+    </li>
+  );
+};
 
-export default Movie
+export default Movie;

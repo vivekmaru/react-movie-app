@@ -1,29 +1,26 @@
-import React from 'react'
-import Movie from './Movie'
+import React from "react";
+import Movie from "./Movie";
 
 const MovieArray = props => {
-    const movies = props.data.map( movie => <Movie movie={movie} key={movie.id}/>)
+  const movies = props.data.map(movie => (
+    <Movie movie={movie} key={movie.id} />
+  ));
 
-    let isSearch;
+  let isSearch;
 
-    if (props.search) {
-        isSearch = "search-list";
-    } else {
-        isSearch = "movie-list";
-    }
+  if (props.search) {
+    isSearch = "search-list";
+  } else {
+    isSearch = "movie-list";
+  }
 
+  return (
+    <div className={props.name}>
+      <h4>{props.name}</h4>
 
-    return (
-        <div className={props.name}>
-            <h4>{props.name}</h4>
+      <ul className={isSearch}>{movies}</ul>
+    </div>
+  );
+};
 
-            <ul className={isSearch}>
-                {movies}
-            </ul>
-
-        </div>
-
-    )
-}
-
-export default MovieArray
+export default MovieArray;
